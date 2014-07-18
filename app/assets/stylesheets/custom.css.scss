@@ -1,0 +1,73 @@
+$navbar-inverse-bg: #003366;
+$brand-primary: #003366;
+$body-bg: #efefee;
+$text-color: #333332;
+$navbar-inverse-link-color: white;
+$navbar-brand-font-size: 30px;
+
+
+
+@import "bootstrap";
+
+body {
+  padding-top: 70px;
+}
+
+.navbar-brand {
+  font-size: 26px;
+  padding-right: 30px;
+}
+
+.main-heading {
+  background: #003366;
+  height: 42px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  margin-bottom: 40px;
+}
+
+.main-heading h2 {
+  color: white;
+  padding: 5px 0 5px 25px;
+}
+
+.list_line_odd {
+  height: 80px;
+  background: #8A9DC0;
+}
+
+.list_line_even {
+  height: 80px;
+  background: rgb(219, 219, 219);
+}
+
+.list_actions {
+  font-size: small;
+  text-align: right;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+td {
+  padding-left: 40px;
+  text-align: center;
+}
+
+th {
+  padding-left: 40px;
+  text-align: center;
+}
+
+.create-ticket {
+  font-size: 26px;
+  text-align: center;
+}
+
+.new_ticket {
+  font-size: 22px;
+}
+
+#ticket_comment {
+  width: 100%;
+}

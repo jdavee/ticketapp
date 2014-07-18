@@ -20,8 +20,8 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
+    <label>Assign to User</label><br>
+    <%= f.select :user_id, User.all.collect {|u| [ "#{u.first_name} #{u.last_name}" , u.id ] },  {:include_blank => true} %>
   </div>
   <div class="actions">
     <%= f.submit %>

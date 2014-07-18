@@ -1,5 +1,6 @@
-<h1>Listing tickets</h1>
-
+<div class="main-heading">
+<h2>All Tickets</h2>
+</div>
 <table>
   <thead>
     <tr>
@@ -14,15 +15,17 @@
 
   <tbody>
     <% @tickets.each do |ticket| %>
-      <tr>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
         <td><%= ticket.user_id %></td>
         <td><%= ticket.issue_type_id %></td>
         <td><%= ticket.issue_status_id %></td>
         <td><%= ticket.name %></td>
         <td><%= ticket.comment %></td>
-        <td><%= link_to 'Show', ticket %></td>
-        <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
-        <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="list_actions">
+          <%= link_to 'Show', ticket %><br/>
+        <%= link_to 'Edit', edit_ticket_path(ticket) %><br/>
+        <%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +33,6 @@
 
 <br>
 
-<%= link_to 'New Ticket', new_ticket_path %>
+<div class="create-ticket">
+<%= link_to 'Create New Ticket', new_ticket_path %>
+</div>
