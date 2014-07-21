@@ -11,29 +11,29 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field input-group">
     <label>Select Type of Issue</label><br>
-    <%= f.select :issue_type_id, IssueType.all.collect { |it| [ it.name, it.id ] }, {:include_blank => true} %>
+    <%= f.select :issue_type_id, IssueType.all.collect { |it| [ it.name, it.id ] }, {:include_blank => true}, :class => 'form-control' %>
   </div>
-  <div class="field">
+  <div class="field input-group">
     <label>Issue Status<br>
-    <%= f.select :issue_status_id, IssueStatus.all.collect { |is| [ is.name, is.id ] }, {:include_blank => true} %>
+    <%= f.select :issue_status_id, IssueStatus.all.collect { |is| [ is.name, is.id ] }, {:include_blank => true}, :class => 'form-control' %>
   </div>
-  <div class="field">
+  <div class="field input-group">
     <label>Assign to User</label><br>
-    <%= f.select :user_id, User.all.collect {|u| [ "#{u.first_name} #{u.last_name}" , u.id ] },  {:include_blank => true} %>
+    <%= f.select :user_id, User.all.collect {|u| [ "#{u.first_name} #{u.last_name}" , u.id ] },  {:include_blank => true}, :class => 'form-control' %>
   </div>
-  <div class="field">
+  <div class="field input-group">
     <label>Project</label><br>
-    <%= f.select :project_id, Project.all.collect { |p| [ p.name, p.id ] }, {:include_blank => true} %>
+    <%= f.select :project_id, Project.all.collect { |p| [ p.name, p.id ] }, {:include_blank => true}, :class => 'form-control' %>
   </div>
-  <div class="field">
+  <div class="field input-group">
     <label>Issue Title</label><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :class => 'form-control' %>
   </div>
-  <div class="field">
+  <div class="field input-group">
     <%= f.label :comment %><br>
-    <%= f.text_area :comment, rows: 10 %>
+    <%= f.text_area :comment, rows: 10, :class => 'form-control' %>
   </div>
   <div class="actions">
     <%= f.submit %>

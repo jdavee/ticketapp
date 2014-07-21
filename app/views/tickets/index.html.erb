@@ -1,11 +1,12 @@
 <div class="main-heading">
+<span><%= link_to 'Create New Ticket', new_ticket_path, :class => "heading-btn btn btn-primary btn-sm" %></span>
 <h3>All Tickets</h3>
 </div>
-<table class="table table-striped table-hover table-responsive table-condensed">
+<table class="table table-striped table-hover table-responsive">
   <thead>
     <tr>
       <th>Project</th>
-      <th>User</th>
+      <th>Assigned To</th>
       <th>Issue type</th>
       <th>Issue status</th>
       <th>Name</th>
@@ -22,7 +23,7 @@
         <td><%= ticket.issue_type.name %></td>
         <td><%= ticket.issue_status.name %></td>
         <td><%= ticket.name %></td>
-        <td class="comment-column"><%= truncate("#{ticket.comment}", length: 70, omission: '...') %></td>
+        <td class="comment-column"><%= truncate("#{ticket.comment}", length: 50, omission: '...') %></td>
         <td class="list_actions">
           <div class="btn-group">
             <%= link_to "View", ticket, :class => "btn btn-primary btn-xs" %>
@@ -36,7 +37,3 @@
 </table>
 <div class="main-heading"></div>
 <br>
-
-<div class="create-ticket">
-<%= link_to 'Create New Ticket', new_ticket_path %>
-</div>

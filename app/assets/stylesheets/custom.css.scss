@@ -4,6 +4,8 @@ $body-bg: #efefee;
 $text-color: #333332;
 $navbar-inverse-link-color: white;
 $navbar-brand-font-size: 30px;
+$table-bg-hover: #87B5FF;
+$table-bg-accent: #F0F0F0;
 
 
 
@@ -66,14 +68,32 @@ th {
   text-align: center;
 }
 
-.new_ticket {
-  font-size: 22px;
-}
-
 #ticket_comment {
   width: 100%;
 }
 
-.comment-column {
-  width: 40%;
+
+
+.float-right {
+  float: right;
+}
+
+.heading-btn {
+  margin-top: 6px;
+  margin-right: 15px;
+  float: right;
+  background: #064889;
+}
+
+.heading-btn a:hover {
+  background: white;
+}
+
+.login-btn {
+  background: #064889;
+  padding: 4px 12px !important;
+  margin-top: 10px;
+  font-size: 14px;
+  vertical-align: middle;
+  display: inline-block !important;
 }
