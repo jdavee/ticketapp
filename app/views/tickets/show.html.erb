@@ -1,26 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div class="main-heading">
+<h3>Ticket Details</h3>
+</div>
+
 
 <p>
   <strong>Project:</strong>
   <%= (!@ticket.project.nil? ? @ticket.project.name : "n/a" ) %>
 </p>
 <p>
-  <strong>User:</strong>
-  <%= @ticket.user_id %>
+  <strong>Assigned to:</strong>
+  <%= "#{@ticket.user.first_name} #{@ticket.user.last_name}" %>
 </p>
 
 <p>
   <strong>Issue type:</strong>
-  <%= @ticket.issue_type_id %>
+  <%= @ticket.issue_type.name %>
 </p>
 
 <p>
   <strong>Issue status:</strong>
-  <%= @ticket.issue_status_id %>
+  <%= @ticket.issue_status.name %>
 </p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Issue Title:</strong>
   <%= @ticket.name %>
 </p>
 
