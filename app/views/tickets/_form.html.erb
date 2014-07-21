@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :issue_type_id %><br>
-    <%= f.number_field :issue_type_id %>
+    <label>Select Type of Issue</label><br>
+    <%= f.select :issue_type_id, IssueType.all.collect { |it| [ it.name, it.id ] }, {:include_blank => true} %>
   </div>
   <div class="field">
-    <%= f.label :issue_status_id %><br>
-    <%= f.number_field :issue_status_id %>
+    <label>Issue Status<br>
+    <%= f.select :issue_status_id, IssueStatus.all.collect { |is| [ is.name, is.id ] }, {:include_blank => true} %>
   </div>
   <div class="field">
     <label>Assign to User</label><br>
@@ -28,7 +28,7 @@
     <%= f.select :project_id, Project.all.collect { |p| [ p.name, p.id ] }, {:include_blank => true} %>
   </div>
   <div class="field">
-    <%= f.label :name %><br>
+    <label>Issue Title</label><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">

@@ -18,7 +18,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">CQ HelpDesk</a>
+      <%= link_to "CQ HelpDesk", root_path, "class" => 'navbar-brand' %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -27,14 +27,16 @@
         <li class="active dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Create <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Create New Ticket</a></li>
+            <li><%= link_to 'Create New Ticket', new_ticket_path %></li>
             <li class="divider"></li>
-            <li><a href="#">Create New Project</a></li>
+            <li><%= link_to 'Create New Project', new_project_path %></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">All Tickets <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
+            <li><a href="#">All Tickets</a><li>
+            <li class="divider"></li>
             <li><a href="#">Open Tickets</a></li>
             <li class="divider"></li>
             <li><a href="#">Closed Tickets</a></li>
