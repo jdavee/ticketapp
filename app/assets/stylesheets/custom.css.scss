@@ -9,7 +9,9 @@ $table-bg-accent: #F0F0F0;
 
 
 
+
 @import "bootstrap";
+@import "font-awesome";
 
 body {
   padding-top: 70px;
@@ -96,4 +98,41 @@ th {
   font-size: 14px;
   vertical-align: middle;
   display: inline-block !important;
+}
+
+.fa-padding-right {
+  padding-right: 5px;
+}
+
+.fa-padding-left {
+  padding-left: 10px;
+}
+
+.account-container {
+width: 380px;
+display: block;
+margin: 60px auto 0 auto;
+padding-bottom: 25px;
+background:  #003366;
+color: white;
+border: 1px solid #d5d5d5;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 8px;
+box-shadow: 0px 0px 2px #dadada, inset 0px -3px 0px #e6e6e6;
+text-align: center;
+}
+
+.account-container a {
+  color: white;
+}
+
+.account-container input {
+  color: black;
+}
+
+.form-center {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
 }

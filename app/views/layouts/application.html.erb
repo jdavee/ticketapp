@@ -72,11 +72,18 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><
           <% if user_signed_in? %>
-          Logged in as <strong><%= current_user.email %></strong>.
-          <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'login-btn btn btn-primary btn-lg' %> </li> |
-          <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'login-btn btn btn-primary btn-lg'  %> </li>
+            <li class="btn-group">
+              <button type="button" class="login-btn btn btn-primary"><%= fa_icon "user", :class => 'fa-padding-right' %><%= "#{current_user.first_name} #{current_user.last_name}".upcase %></button>
+              <button type="button" class="login-btn btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><i class="fa fa-edit fa-padding-left"><%= link_to ' Update Profile', edit_user_registration_path %></i> </li>
+              <li class="divider"></li>
+              <li><i class="fa fa-sign-out fa-padding-left"><%= link_to " Logout", destroy_user_session_path, method: :delete  %></i> </li>
+            </ul>
         <% else %>
           <%= link_to "Login", new_user_session_path, :class => 'login-btn btn btn-primary btn-lg'  %>
         <% end %>
