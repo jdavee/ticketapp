@@ -52,6 +52,16 @@ class TicketsController < ApplicationController
     end
   end
 
+  #SEARCH
+  def index
+if params[:search]
+@tickets = Ticket.search(params[:search]).order("created_at DESC")
+else
+
+@tickets = Ticket.all.order('created_at DESC')
+end
+end
+
   # DELETE /tickets/1
   # DELETE /tickets/1.json
   def destroy
