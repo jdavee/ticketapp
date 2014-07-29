@@ -6,7 +6,7 @@ class TicketsController < ApplicationController
   # GET /tickets.json
   def index
     @q = Ticket.ransack(params[:q])
-    @tickets = @q.result.includes(:project, :user, :issue_type, :issue_status)
+    @tickets = @q.result.includes(:project, :user, :issue_type, :issue_status).paginate(:page => params[:page], :per_page => 5)
   end
 
   # GET /tickets/1

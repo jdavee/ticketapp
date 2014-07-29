@@ -40,9 +40,16 @@ gem 'spring',        group: :development
 
 # Gems used only for assets and not required
 # in production environments by default.
+
+# Styling/CSS
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'font-awesome-rails', '4.1.0.0'
 
+# Authentication
 gem 'devise'
 
+# Search/Sorting
 gem 'ransack'
+
+#Pagination
+gem 'will_paginate', '~> 3.0'

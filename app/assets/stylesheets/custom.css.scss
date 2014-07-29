@@ -141,6 +141,35 @@ text-align: center;
 margin-top: 4px !important;
 margin-bottom: 4px !important;
 margin-right: 25%;
+}
 
+.custom_pagination {
+  text-align: center;
+  padding: 1em;
+  cursor: default; }
+  .custom_pagination a, .apple_pagination span {
+    padding: 0.2em 0.3em; }
+  .custom_pagination .disabled {
+    color: #aaaaaa; }
+  .custom_pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    background-color: #bebebe;
+    display: inline-block;
+    width: 1.4em;
+    height: 1.4em;
+    line-height: 1.5;
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    border-radius: 1em;
+    text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px; }
+  .custom_pagination a {
+    text-decoration: none;
+    color: white; }
+    .custom_pagination a:hover, .apple_pagination a:focus {
+      text-decoration: underline;
+}
 
+.center_pagination {
+  text-align: center;
 }
