@@ -11,31 +11,33 @@
     </div>
   <% end %>
 
-  <div class="field input-group">
-    <label>Select Type of Issue</label><br>
-    <%= f.select :issue_type_id, IssueType.all.collect { |it| [ it.name, it.id ] }, {:include_blank => true}, :class => 'form-control' %>
-  </div>
-  <div class="field input-group">
+  <div class="field input-group form-center">
     <label>Issue Status<br>
     <%= f.select :issue_status_id, IssueStatus.all.collect { |is| [ is.name, is.id ] }, {:include_blank => true}, :class => 'form-control' %>
   </div>
-  <div class="field input-group">
+  <div class="field input-group form-center">
+    <label>Select Type of Issue</label><br>
+    <%= f.select :issue_type_id, IssueType.all.collect { |it| [ it.name, it.id ] }, {:include_blank => true}, :class => 'form-control' %>
+  </div>
+  <div class="field input-group form-center">
     <label>Assign to User</label><br>
     <%= f.select :user_id, User.all.collect {|u| [ "#{u.first_name} #{u.last_name}" , u.id ] },  {:include_blank => true}, :class => 'form-control' %>
   </div>
-  <div class="field input-group">
+  <div class="field input-group form-center">
     <label>Project</label><br>
     <%= f.select :project_id, Project.all.collect { |p| [ p.name, p.id ] }, {:include_blank => true}, :class => 'form-control' %>
   </div>
-  <div class="field input-group">
+  <div class="field input-group form-center">
     <label>Issue Title</label><br>
     <%= f.text_field :name, :class => 'form-control' %>
   </div>
-  <div class="field input-group">
+  <div class="field input-group form-center">
     <%= f.label :comment %><br>
     <%= f.text_area :comment, rows: 10, :class => 'form-control' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= submit_tag "Submit Ticket", :class => 'btn btn-primary blue-btn' %>
+    <%= link_to 'Cancel',  tickets_path, :class => 'btn btn-primary blue-btn' %>
   </div>
+
 <% end %>
