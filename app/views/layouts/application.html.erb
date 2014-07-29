@@ -79,14 +79,6 @@
           </ul>
         </li>
       </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <%= form_tag(tickets_path, :method => "get", id: "search-form") do %>
-          <%= text_field_tag :search, params[:search], placeholder: "Search Tickets", :class => 'form-control' %>
-          <%= submit_tag "Search", :class => 'btn btn-default' %>
-          <% end %>
-        </div>
-      </form>
       <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
             <li class="btn-group">

@@ -1,16 +1,26 @@
 <div class="main-heading">
+
 <span><%= link_to 'Create New Ticket', new_ticket_path, :class => "heading-btn btn btn-primary btn-sm" %></span>
+<form class="navbar-form navbar-right spansearch" role="search">
+  <div class="form-group">
+  <%= search_form_for @q do |f| %>
+    <%= f.text_field :name_or_comment_cont, placeholder: "Search Tickets", :class => 'form-control' %>
+    <%= submit_tag "Search", :class => 'btn btn-default' %>
+  <% end %>
+</div>
+</form>
 <h3>All Tickets</h3>
 </div>
+
 <table class="table table-striped table-hover table-responsive">
   <thead>
     <tr>
-      <th>Project</th>
-      <th>Assigned To</th>
-      <th>Issue type</th>
-      <th>Issue status</th>
-      <th>Name</th>
-      <th>Comment</th>
+      <%= content_tag :th, sort_link(@q, :project_name, "Project") %>
+      <%= content_tag :th, sort_link(@q, :user_first_name, "Assigned To") %>
+      <%= content_tag :th, sort_link(@q, :issue_type_name, "Issue Type") %>
+      <%= content_tag :th, sort_link(@q, :issue_status_name, "Issue Status") %>
+      <%= content_tag :th, sort_link(@q, :name) %>
+      <%= content_tag :th, sort_link(@q, :comment) %>
       <th colspan="3"></th>
     </tr>
   </thead>

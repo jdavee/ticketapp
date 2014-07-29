@@ -7,7 +7,7 @@ class Ticket < ActiveRecord::Base
   belongs_to :issue_status
 
   def self.search(query)
-# where(:title, query) -> This would return an exact match of the query
-where("name ILIKE ? OR comment ILIKE ?", "%#{query}%","%#{query}%")
-end
+    # where(:title, query) -> This would return an exact match of the query
+    where("tickets.name ILIKE ? OR tickets.comment ILIKE ?", "%#{query}%","%#{query}%")
+  end
 end

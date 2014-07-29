@@ -5,7 +5,8 @@ class TicketsController < ApplicationController
   # GET /tickets
   # GET /tickets.json
   def index
-    @tickets = Ticket.all
+    @q = Ticket.ransack(params[:q])
+    @tickets = @q.result.includes(:project, :user, :issue_type, :issue_status)
   end
 
   # GET /tickets/1
@@ -53,14 +54,7 @@ class TicketsController < ApplicationController
   end
 
   #SEARCH
-  def index
-if params[:search]
-@tickets = Ticket.search(params[:search]).order("created_at DESC")
-else
 
-@tickets = Ticket.all.order('created_at DESC')
-end
-end
 
   # DELETE /tickets/1
   # DELETE /tickets/1.json
@@ -80,6 +74,7 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ticket_params
-      params.require(:ticket).permit(:user_id, :issue_type_id, :issue_status_id, :name, :comment, :project_id, :issue_status_name)
+      params.require(:ticket).permit(:user_id, :issue_type_id, :issue_status_id, :name, :comment, :project_id, :issue_status_name, :project_name)
     end
+
 end
