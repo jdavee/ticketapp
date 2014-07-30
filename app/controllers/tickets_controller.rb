@@ -6,6 +6,7 @@ class TicketsController < ApplicationController
   # GET /tickets.json
   def index
     @q = Ticket.ransack(params[:q])
+    @q.sorts = 'created_at desc' if @q.sorts.empty?
     @tickets = @q.result.includes(:project, :user, :issue_type, :issue_status).paginate(:page => params[:page], :per_page => 5)
   end
 

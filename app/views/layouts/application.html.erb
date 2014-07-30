@@ -25,57 +25,81 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Create <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tickets <span class="caret"></span></a>
+          <ul class="dropdown-menu multi-level" role="menu">
+            <li><%= link_to 'View All Tickets', tickets_path %></li>
+            <li class="divider"></li>
+            <li class="dropdown-submenu"><a href="#">Filter by Status</a>
+              <ul class="dropdown-menu">
+                <li><%= link_to 'New', tickets_path( :'q[issue_status_name_cont]' => 'New') %></li>
+                <li class="divider"></li>
+                <li><%= link_to 'Pending', tickets_path( :'q[issue_status_name_cont]' => 'Pending') %></li>
+                <li class="divider"></li>
+                <li><%= link_to 'In Progress', tickets_path( :'q[issue_status_name_cont]' => 'In Progress') %></li>
+                <li class="divider"></li>
+                <li><%= link_to 'Resolved', tickets_path( :'q[issue_status_name_cont]' => 'Resolved') %></li>
+              </ul>
+            </li>
+            <li class="divider"></li>
+            <li class="dropdown-submenu"><a href="#">Filter by Project</a>
+              <ul class="dropdown-menu">
+                <li><%= link_to 'Main Website', tickets_path( :'q[project_name_cont]' => 'Main Website') %></li>
+                <li class="divider"></li>
+                <li><%= link_to 'CQ Portal', tickets_path( :'q[project_name_cont]' => 'Portal') %></li>
+                <li class="divider"></li>
+                <li><%= link_to 'CQIQ Website', tickets_path( :'q[project_name_cont]' => 'CQIQ Website') %></li>
+                <li class="divider"></li>
+                <li><%= link_to 'Ag Dispatching', tickets_path( :'q[project_name_cont]' => 'Dispatching') %></li>
+                <li class="divider"></li>
+                <li><%= link_to 'Crop Budget', tickets_path( :'q[project_name_cont]' => 'Crop Budget') %></li>
+                <li class="divider"></li>
+                <li><%= link_to 'Hardware/Software', tickets_path( :'q[project_name_cont]' => 'Hardware/Software') %></li>
+                <li class="divider"></li>
+                <li><%= link_to 'Paramount Reporting', tickets_path( :'q[project_name_cont]' => 'Paramount Reports') %></li>
+                <li class="divider"></li>
+                <li><%= link_to 'SST Summit', tickets_path( :'q[project_name_cont]' => 'SST Summit') %></li>
+                <li class="divider"></li>
+                <li><%= link_to 'Carbonite', tickets_path( :'q[project_name_cont]' => 'Carbonite') %></li>
+                <li class="divider"></li>
+                <li><%= link_to 'Phones', tickets_path( :'q[project_name_cont]' => 'Phones') %></li>
+                <li class="divider"></li>
+                <li><%= link_to 'CQ HelpDesk', tickets_path( :'q[project_name_cont]' => 'CQ HelpDesk') %></li>
+              </ul>
+            </li>
+            <li class="divider"></li>
             <li><%= link_to 'Create New Ticket', new_ticket_path %></li>
-            <li class="divider"></li>
-            <li><%= link_to 'Create New Project', new_project_path %></li>
-            <li class="divider"></li>
-            <li><%= link_to 'Create New Issue Type', new_issue_type_path %></li>
-            <li class="divider"></li>
-            <li><%= link_to 'Create New Issue Status', new_issue_status_path %></li>
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Filter by Status <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><%= link_to 'All Tickets', root_path %></li>
-            <li class="divider"></li>
-            <li><%= link_to 'New', tickets_path( :'q[issue_status_name_cont]' => 'New') %></li>
-            <li class="divider"></li>
-            <li><%= link_to 'Pending', tickets_path( :'q[issue_status_name_cont]' => 'Pending') %></li>
-            <li class="divider"></li>
-            <li><%= link_to 'In Progress', tickets_path( :'q[issue_status_name_cont]' => 'In Progress') %></li>
-            <li class="divider"></li>
-            <li><%= link_to 'Resolved', tickets_path( :'q[issue_status_name_cont]' => 'Resolved') %></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Filter by Projects <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><%= link_to 'All Projects', projects_path %></li>
             <li class="divider"></li>
-            <li><%= link_to 'Main Website', tickets_path( :'q[project_name_cont]' => 'Main Website') %></li>
+            <li><%= link_to 'Create New Project', new_project_path %></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Users <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><%= link_to 'All Users', users_path %></li>
             <li class="divider"></li>
-            <li><%= link_to 'CQ Portal', tickets_path( :'q[project_name_cont]' => 'Portal') %></li>
+            <li><%= link_to 'Create New User', new_user_path %></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Issue Types <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><%= link_to 'All Issue Types', issue_types_path %></li>
             <li class="divider"></li>
-            <li><%= link_to 'CQIQ Website', tickets_path( :'q[project_name_cont]' => 'CQIQ Website') %></li>
+            <li><%= link_to 'Create New Issue Type', new_issue_type_path %></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Issue Statuses <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><%= link_to 'All Issue Statuses', issue_statuses_path %></li>
             <li class="divider"></li>
-            <li><%= link_to 'Ag Dispatching', tickets_path( :'q[project_name_cont]' => 'Dispatching') %></li>
-            <li class="divider"></li>
-            <li><%= link_to 'Crop Budget', tickets_path( :'q[project_name_cont]' => 'Crop Budget') %></li>
-            <li class="divider"></li>
-            <li><%= link_to 'Hardware/Software', tickets_path( :'q[project_name_cont]' => 'Hardware/Software') %></li>
-            <li class="divider"></li>
-            <li><%= link_to 'Paramount Reporting', tickets_path( :'q[project_name_cont]' => 'Paramount Reports') %></li>
-            <li class="divider"></li>
-            <li><%= link_to 'SST Summit', tickets_path( :'q[project_name_cont]' => 'SST Summit') %></li>
-            <li class="divider"></li>
-            <li><%= link_to 'Carbonite', tickets_path( :'q[project_name_cont]' => 'Carbonite') %></li>
-            <li class="divider"></li>
-            <li><%= link_to 'Phones', tickets_path( :'q[project_name_cont]' => 'Phones') %></li>
-            <li class="divider"></li>
-            <li><%= link_to 'CQ HelpDesk', tickets_path( :'q[project_name_cont]' => 'CQ HelpDesk') %></li>
+            <li><%= link_to 'Create New Issue Status', new_issue_status_path %></li>
           </ul>
         </li>
       </ul>
