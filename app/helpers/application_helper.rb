@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def is_active?(link_path)
-    current_page?(link_path) ? "active" : ""
-  end
+  def current_url?(matcher)
+		(request.path_parameters[:controller] == matcher ? true : false)
+	end
 end

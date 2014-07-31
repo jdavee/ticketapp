@@ -24,7 +24,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active dropdown">
+        <li class="dropdown <%= request.url == main_app.root_url || request.fullpath.include?('ticket') ? 'active' : '' %>">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tickets <span class="caret"></span></a>
           <ul class="dropdown-menu multi-level" role="menu">
             <li><%= link_to 'View All Tickets', tickets_path %></li>
@@ -70,7 +70,7 @@
             <li><%= link_to 'Create New Ticket', new_ticket_path %></li>
           </ul>
         </li>
-        <li class="dropdown">
+        <li class="dropdown <%= request.fullpath.include?('project') ? 'active' : '' %>">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><%= link_to 'All Projects', projects_path %></li>
@@ -78,7 +78,7 @@
             <li><%= link_to 'Create New Project', new_project_path %></li>
           </ul>
         </li>
-        <li class="dropdown">
+        <li class="dropdown <%= request.fullpath.include?('user') ? 'active' : '' %>">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Users <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><%= link_to 'All Users', users_path %></li>
@@ -86,7 +86,7 @@
             <li><%= link_to 'Create New User', new_user_path %></li>
           </ul>
         </li>
-        <li class="dropdown">
+        <li class="dropdown <%= request.fullpath.include?('issue_type') ? 'active' : '' %>">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Issue Types <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><%= link_to 'All Issue Types', issue_types_path %></li>
@@ -94,7 +94,7 @@
             <li><%= link_to 'Create New Issue Type', new_issue_type_path %></li>
           </ul>
         </li>
-        <li class="dropdown">
+        <li class="dropdown <%= request.fullpath.include?('issue_status') ? 'active' : '' %>">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Issue Statuses <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><%= link_to 'All Issue Statuses', issue_statuses_path %></li>
