@@ -4,7 +4,7 @@
 <form class="navbar-form navbar-right spansearch" role="search">
   <div class="form-group">
   <%= search_form_for @q do |f| %>
-    <%= f.text_field :name_or_comment_cont, placeholder: "Search Tickets", :class => 'form-control' %>
+    <%= f.text_field :name_or_comment_or_user_first_name_or_project_name_or_issue_status_name_cont, placeholder: "Search Tickets", :class => 'form-control' %>
     <%= submit_tag "Search", :class => 'btn btn-default' %>
   <% end %>
 </div>
