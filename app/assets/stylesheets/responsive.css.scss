@@ -1,0 +1,30 @@
+@media (max-width: 1199px)
+{
+  .spansearch {
+    margin-right: 20%;
+  }
+}
+
+@media (max-width: 991px)
+{
+  .spansearch {
+    margin-right: 10%;
+  }
+
+  .login-btn {
+    display: none !important;
+  }
+
+  .container > .navbar-collapse {
+    margin-left :0;
+    margin-right: 0;
+  }
+
+}
+
+@media (max-width: 767px)
+{
+  .spansearch {
+    display: none;
+  }
+}
