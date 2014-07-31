@@ -11,19 +11,24 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field input-group form-center">
     <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, :class => 'form-control' %>
   </div>
-  <div class="field">
+  <div class="field input-group form-center">
     <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
+    <%= f.text_field :last_name, :class => 'form-control' %>
   </div>
-  <div class="field">
+  <div class="field input-group form-center">
     <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <%= f.text_field :email, :class => 'form-control' %>
+  </div>
+  <div class="field input-group form-center">
+    <%= f.label :password %><br>
+    <%= f.text_field :password, :class => 'form-control' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= submit_tag "Submit User", :class => 'btn btn-primary blue-btn' %>
+    <%= link_to 'Cancel',  users_path, :class => 'btn btn-primary blue-btn' %>
   </div>
 <% end %>

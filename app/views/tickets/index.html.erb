@@ -15,32 +15,32 @@
 <table class="table table-striped table-hover table-responsive">
   <thead>
     <tr>
-      <%= content_tag :th, sort_link(@q, :created_at, 'Date Created') %>
+      <%= content_tag :th, sort_link(@q, :created_at, 'Date Created'), class: 'date-title' %>
       <%= content_tag :th, sort_link(@q, :project_name, "Project") %>
       <%= content_tag :th, sort_link(@q, :user_first_name, "Assigned To") %>
-      <%= content_tag :th, sort_link(@q, :issue_type_name, "Issue Type") %>
+      <%= content_tag :th, sort_link(@q, :issue_type_name, "Issue Type"), class: 'issuetype-title' %>
       <%= content_tag :th, sort_link(@q, :issue_status_name, "Issue Status") %>
       <%= content_tag :th, sort_link(@q, :name) %>
-      <%= content_tag :th, sort_link(@q, :comment) %>
-      <th colspan="3"></th>
+      <%= content_tag :th, sort_link(@q, :comment), class: 'comment-title' %>
+      <th colspan="8"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @tickets.each do |ticket| %>
       <tr>
-        <td><%= ticket.created_at.strftime("%b %e, %l:%M %p") %></td>
+        <td class="date-column"><%= ticket.created_at.strftime("%b %e, %l:%M %p") %></td>
         <td><%= ticket.project.name %></td>
         <td><%= "#{ticket.user.first_name} #{ticket.user.last_name}" %></td>
-        <td><%= ticket.issue_type.name %></td>
+        <td class="issuetype-column"><%= ticket.issue_type.name %></td>
         <td><%= ticket.issue_status.name %></td>
         <td><%= ticket.name %></td>
         <td class="comment-column"><%= truncate("#{ticket.comment}", length: 40, omission: '...') %></td>
         <td class="list_actions">
           <div class="btn-group">
             <%= link_to "View", ticket, :class => "btn btn-primary btn-xs" %>
-            <%= link_to "Edit", edit_ticket_path(ticket), :class => "btn btn-default btn-xs" %>
-            <%= link_to "Delete", ticket, method: :delete, data: {confirm: 'Are you sure?' }, :class => "btn btn-primary btn-xs" %>
+            <%= link_to "Edit", edit_ticket_path(ticket), :class => "btn btn-default btn-xs listaction-display" %>
+            <%= link_to "Delete", ticket, method: :delete, data: {confirm: 'Are you sure?' }, :class => "btn btn-primary btn-xs listaction-display" %>
           </div>
         </td>
       </tr>

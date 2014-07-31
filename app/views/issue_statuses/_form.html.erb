@@ -11,11 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field input-group form-center">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :class => 'form-control' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= submit_tag "Submit Issue Status", :class => 'btn btn-primary blue-btn' %>
+    <%= link_to 'Cancel',  issue_statuses_path, :class => 'btn btn-primary blue-btn' %>
   </div>
 <% end %>

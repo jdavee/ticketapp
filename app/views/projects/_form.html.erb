@@ -11,19 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field input-group form-center">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :class => 'form-control' %>
   </div>
-  <div class="field">
+  <div class="field input-group form-center">
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, :class => 'form-control' %>
   </div>
-  <div class="field">
+  <div class="field input-group form-center">
     <label>Assign to User</label><br>
-    <%= f.select :user_id, User.all.collect {|u| [ "#{u.first_name} #{u.last_name}" , u.id ] },  {:include_blank => true} %>
+    <%= f.select :user_id, User.all.collect {|u| [ "#{u.first_name} #{u.last_name}" , u.id ] },  {:include_blank => true}, :class => 'form-control' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= submit_tag "Submit Project", :class => 'btn btn-primary blue-btn' %>
+    <%= link_to 'Cancel',  projects_path, :class => 'btn btn-primary blue-btn' %>
   </div>
 <% end %>
