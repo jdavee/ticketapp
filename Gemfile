@@ -53,3 +53,6 @@ gem 'ransack'
 
 #Pagination
 gem 'will_paginate', '~> 3.0'
+
+#Bootstrap In Place Editing
+gem 'bootstrap-x-editable-rails'

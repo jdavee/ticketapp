@@ -1,36 +1,51 @@
-<div class="main-heading">
-<h3>Ticket Details</h3>
+<div class="main-heading boxed-fill">
+  <h3>Ticket Details</h3>
 </div>
 
+  <div style="margin-bottom: 25px; text-align: center;">
+    <span style="font-size: 28px; font-weight: bold"><%= @ticket.name %></span>
+    <a href="#" data-xeditable="true" data-mode="inline" data-pk="<%= @ticket.name %>" data-model="ticket" data-name="name" data-url="<%= ticket_url(@ticket) %>" data-title="Enter Title"><span style="display: inline">(edit)</span></a>
+  </div>
 
-<p>
-  <strong>Project:</strong>
-  <%= (!@ticket.project.nil? ? @ticket.project.name : "n/a" ) %>
-</p>
-<p>
-  <strong>Assigned to:</strong>
-  <%= "#{@ticket.user.first_name} #{@ticket.user.last_name}" %>
-</p>
+<table class="table table-responsive showticktable">
 
-<p>
-  <strong>Issue type:</strong>
-  <%= @ticket.issue_type.name %>
-</p>
 
-<p>
-  <strong>Issue status:</strong>
-  <%= @ticket.issue_status.name %>
-</p>
+  <tbody>
+    <tr>
+      <td>Project: </td>
+      <td>
+        <a href="#" data-xeditable="true" data-mode="inline" data-type="select" data-source="<%= @project_items.to_json %>" data-pk="<%= @ticket.project.id %>" data-model="ticket" data-name="project_id" data-url="<%= ticket_url(@ticket) %>" data-title ="Select Project"><%= @ticket.project.name %></a>
+      </td>
+    </tr>
+    <tr>
+      <td>Assigned To:</td>
+      <td>
+        <a href="#" data-xeditable="true" data-mode="inline" data-type="select" data-source="<%= @user_items.to_json %>" data-pk="<%= @ticket.user_id %>" data-model="ticket" data-name="user_id" data-url="<%= ticket_url(@ticket) %>" data-title ="Select User"><%= "#{@ticket.user.first_name} #{@ticket.user.last_name}" %> </a>
+      </td>
+    </tr>
+    <tr>
+      <td>Issue Type:</td>
+      <td>
+        <a href="#" data-xeditable="true" data-mode="inline" data-type="select" data-source="<%= @issue_type_items.to_json %>" data-pk="<%= @ticket.issue_type.id %>" data-model="ticket" data-name="issue_type_id" data-url="<%= ticket_url(@ticket) %>" data-title ="Select Issue Type"><%= @ticket.issue_type.name %></a>
+      </td>
+    </tr>
+    <tr>
+      <td>Issue Status:</td>
+      <td>
+        <a href="#" data-xeditable="true" data-mode="inline" data-type="select" data-source="<%= @issue_status_items.to_json %>" data-pk="<%= @ticket.issue_status.id %>" data-model="ticket" data-name="issue_status_id" data-url="<%= ticket_url(@ticket) %>" data-title ="Select Issue Status"><%= @ticket.issue_status.name %></a>
+      </td>
+    </tr>
+    <tr style="height: 200px">
+      <td>Issue Description:</td>
+      <td>
+        <a href="#" data-xeditable="true" data-mode="inline" data-type="textarea" data-pk="<%= @ticket.comment %>" data-model="ticket" data-name="comment" data-url="<%= ticket_url(@ticket) %>" data-title ="Edit Comment"><%= @ticket.comment %></a>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-<p>
-  <strong>Issue Title:</strong>
-  <%= @ticket.name %>
-</p>
+<div class="main-heading boxed-fill"></div>
 
-<p>
-  <strong>Comment:</strong>
-  <%= @ticket.comment %>
-</p>
 
 <%= link_to 'Edit', edit_ticket_path(@ticket) %> |
 <%= link_to 'Back', tickets_path %>

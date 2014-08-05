@@ -13,6 +13,33 @@ class TicketsController < ApplicationController
   # GET /tickets/1
   # GET /tickets/1.json
   def show
+    @project_items = []
+    @project_all = Project.all.collect
+
+    @project_all.each do |x|
+      @project_items << {value: x.id, text: x.name}
+    end
+
+    @user_items = []
+    @user_all = User.all.collect
+
+    @user_all.each do |u|
+      @user_items << {value: u.id, text: "#{u.first_name} #{u.last_name}"}
+    end
+
+    @issue_type_items = []
+    @issue_type_all = IssueType.all.collect
+
+    @issue_type_all.each do |it|
+      @issue_type_items << {value: it.id, text: it.name}
+    end
+
+    @issue_status_items = []
+    @issue_status_all = IssueStatus.all.collect
+
+    @issue_status_all.each do |is|
+      @issue_status_items << {value: is.id, text: is.name}
+    end
   end
 
   # GET /tickets/new
