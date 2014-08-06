@@ -1,5 +1,5 @@
 class Ticket < ActiveRecord::Base
-  validates_presence_of :name, :comment
+  validates_presence_of :issue_status, :issue_type, :user_id, :name, :comment, :project_id
 
   belongs_to :project
   belongs_to :user
