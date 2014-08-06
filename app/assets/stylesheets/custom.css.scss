@@ -257,4 +257,9 @@ margin-right: 25%;
 .showticktable > tbody > tr > td {
   text-align: left;
   font-size: 18px;
+  padding-right: 20px;
+}
+
+.editable-input > textarea {
+  width: 650px !important;
 }

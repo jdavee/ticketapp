@@ -40,6 +40,8 @@ class TicketsController < ApplicationController
     @issue_status_all.each do |is|
       @issue_status_items << {value: is.id, text: is.name}
     end
+
+    @tickets = Ticket.all
   end
 
   # GET /tickets/new
